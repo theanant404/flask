@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Website{% endblock %}
+
+{% block content %}
+<div>
+    <h1 style="color: blue; font-size: 24px;">
+        this is home page
+    </h1>
+
+    {%for user in users %}
+    <div>
+        <span>Welcome {{ user.name|upper }}!</span>
+        <span>You are {{ user.age }} years old.</span>
+        <span>Your email is {{ user.email|lower }}.</span>
+        <br />
+    </div>
+    {% for mark in user.marks %}
+    <span>{{ mark }}: {{ user.marks[mark] }}</span>
+    {% if user.marks[mark] > 80 %}
+    <span style="color: green;">(Excellent)</span>
+    {% elif user.marks[mark] > 60 %}
+    <span style="color: orange;">(Good)</span>
+    {% else %}
+    <span style="color: red;">(Needs Improvement)</span>
+    {% endif %}
+    <br />
+    {% endfor %}
+    {% endfor %}
+    {% if user %}
+
+    <p>Welcome {{ user.name|upper }}!</p>
+    <p>You are {{ user.age }} years old.</p>
+    <p>Your email is {{ user.email|lower }}.</p>
+    {% else %}
+    <p>Welcome to the home page!</p>
+    {% endif %}
+</div>
+{% endblock %}
