@@ -1,12 +1,3 @@
-# Flask App Setup and Routing Guide
-
-This document is a clean learning guide for:
-
-- Setting up a Flask app
-- Creating routes
-- Using HTTP methods (`GET`, `POST`, `PUT`, etc.)
-- Reading user input from requests
-
 ## 1. New Flask App Setup
 
 ### Step 1: Create project folder
